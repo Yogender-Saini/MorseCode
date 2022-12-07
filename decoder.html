@@ -36,6 +36,7 @@
       '---..':  '8',
       '----.':  '9',
       '-----':  '0',
+
     };
   
     return morseCode
@@ -48,10 +49,28 @@
           ).join('')
       ).join(' ');
   }
-  
-  var decoded = decodeMorse(".-- --- .-. -..   .-- --- .-. -..");
-  console.log(decoded);
+
+
+  function putcodehere(){
+  var decoded = decodeMorse(prompt("Put Morse code here"));
+
+  document.getElementById("chair").innerHTML= "putcodehere";
+
+}
   </script>
+
+</head>
+<body>
+
+    <h1 id = "chair" style="background-color:blue">English</h1>
+    <p>  <a href="#" onclick="putcodehere();";> Click here for Morse Code</a> </p>
+
+
+
+
+</body>
+</html>
+
 
 
 

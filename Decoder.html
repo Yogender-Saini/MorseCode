@@ -23,11 +23,68 @@
     </style>
 
     <script>
-      
-      
-        function myFunction() {
+  function myFunction() {
       document.getElementById("myText");
     }
+
+      function decodeMorse(morseCode) {
+    var ref = { 
+      '.-':     'a',
+      '-...':   'b',
+      '-.-.':   'c',
+      '-..':    'd',
+      '.':      'e',
+      '..-.':   'f',
+      '--.':    'g',
+      '....':   'h',
+      '..':     'i',
+      '.---':   'j',
+      '-.-':    'k',
+      '.-..':   'l',
+      '--':     'm',
+      '-.':     'n',
+      '---':    'o',
+      '.--.':   'p',
+      '--.-':   'q',
+      '.-.':    'r',
+      '...':    's',
+      '-':      't',
+      '..-':    'u',
+      '...-':   'v',
+      '.--':    'w',
+      '-..-':   'x',
+      '-.--':   'y',
+      '--..':   'z',
+      '.----':  '1',
+      '..---':  '2',
+      '...--':  '3',
+      '....-':  '4',
+      '.....':  '5',
+      '-....':  '6',
+      '--...':  '7',
+      '---..':  '8',
+      '----.':  '9',
+      '-----':  '0',
+    };
+  
+    return morseCode
+      .split('   ')
+      .map(
+        a => a
+          .split(' ')
+          .map(
+            b => ref[b]
+          ).join('')
+      ).join(' ');
+  }
+
+
+  function putcodehere(){
+  var decoded = decodeMorse(textbox)
+  document.getElementById("textbox2").innerHTML= decoded;
+
+}
+      
     </script>
 </head>
 <body>
@@ -37,12 +94,17 @@
     
     </body>
 
-    <p>Put message to decode:</p><input id="textbox" style = "width:600px;height:500px" type="text">
+    <p>Put message to decode:</p>
+    <input id="textbox" style = "width:600px;height:500px" type="text">
     <!-- <button onclick="decoder();">Decode</button> -->
 
-<input id="textbox" style = "width:600px;height:500px" type="text">
+<input id="textbox2" style = "width:600px;height:500px" type="text">
 <br>
-<button onclick="myFunction()">Decode</button>
+<button onclick="decodeMorse(morseCode)">Decode</button>
+<button id ="demo" onclick='document.getElementById(demo)'.innerHTML = decoded>Click></button>
+
+<p>  <a href="#" onclick="putcodehere();";> Click here for Morse Code</a> </p>
+
 
 
 </body>

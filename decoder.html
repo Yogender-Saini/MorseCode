@@ -1,4 +1,11 @@
-<script>function decodeMorse(morseCode) {
+<script>function decode(message,  codetype) {
+    
+    if (codetype  ==  "morse"){
+
+    }
+    else if (codetype == "something"){
+
+    }
     var ref = { 
       '.-':     'a',
       '-...':   'b',
@@ -44,20 +51,18 @@
 
     };
   
-    return morseCode
-      .split('   ')
-      .map(
-        a => a
-          .split(' ')
-          .map(
-            b => ref[b]
-          ).join('')
-      ).join(' ');
+    const convertToMorse = (str) => {
+   return str.toUpperCase().split("").map(el => {
+      return morseCode[el] ? morseCode[el] : el;
+   }).join("");
+};
+console.log(convertToMorse('Disaster management'));
+console.log(convertToMorse('hey there!'));
   }
 
 
   function putcodehere(){
-  var decoded = decodeMorse(prompt("Put Morse code here"));
+  var decoded = decode(prompt("Put Morse code here"), "morse");
 
   document.getElementById("chair").innerHTML= decoded;
 

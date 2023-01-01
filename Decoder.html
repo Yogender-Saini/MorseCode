@@ -99,6 +99,86 @@ function decode()
   document.getElementById("textbox2").value = decoded
 }
       
+//Script for Decoder above and bellow is Script for Coder//
+
+//Function to code message on click//
+
+
+// Code to code the message//
+function myFunction2() {
+      document.getElementById("myText");
+    }
+
+      function codeMorse(morseCode2) {
+    var ref = { 
+      'a':     '.-',
+      'b':   '-...',
+      'c':   '-.-.',
+      'd':    '-..',
+      'e':      '.',
+      'f':   '..-.',
+      'g':    '--.',
+      'h':   '....',
+      'i':     '..',
+      'j':   '.---',
+      'k':    '-.-',
+      'l':   '.-..',
+      'm':     '--',
+      'n':     '-.',
+      'o':    '---',
+      'p':   '.--.',
+      'q':   '--.-',
+      'r':    '.-.',
+      's':    '...',
+      't':      '-',
+      'u':    '..-',
+      'v':   '...-',
+      'w':    '.--',
+      'x':   '-..-',
+      'y':   '-.--',
+      'z':   '--..',
+      '1':  '.----',
+      '2':  '..---',
+      '3':  '...--',
+      '4':  '....-',
+      '5':  '.....',
+      '6':  '-....',
+      '7':  '--...',
+      '8':  '---..',
+      '9':  '----.',
+      '0':  '-----',
+      ' ': '/',
+      '?': '..--..',
+      '!': '-.-.--',
+      '@': '.--.-.',
+      ',': '--..--',
+      '.': '.-.-.-',
+    };
+  
+    return morseCode2
+      .split('   ')
+      .map(
+        a => a
+          .split(' ')
+          .map(
+            b => ref[b]
+          ).join('')
+      ).join(' ');
+  }
+
+
+  function putcodehere2(){
+  var coded = codeMorse(textbox);
+  document.getElementById("textbox4").innerHTML= coded;
+
+}
+function code()
+{
+  var message2 = document.getElementById("textbox3").value;
+  console.log(message2);
+  var coded = codeMorse(message2);
+  document.getElementById("textbox4").value = coded;  
+}
     </script>
 </head>
 <body>
@@ -115,7 +195,13 @@ function decode()
 <input id="textbox2" style = "width:600px;height:500px" type ="text">
 <br>
 <button onclick="decode()">Decode</button>
+<br>
+<p>Put message to code:</p>
+<input id="textbox3" style = "width:600px;height:500px" type="text">
+<input id="textbox4" style = "width:600px;height:500px" type ="text">
+<br>
 
+<button onclick="code()">Code</button>
 
 </body>
 </html>

@@ -1,80 +1,71 @@
-<script>function codeMorsecode(morseCode) {
-    var ref = { 
-      'a':     '.-',
-      'b':   '-...',
-      'c':   '-.-.',
-      'd':    '-..',
-      'e':      '.',
-      'f':   '..-.',
-      'g':    '--.',
-      'h':   '....',
-      'i':     '..',
-      'j':   '.---',
-      'k':    '-.-',
-      'l':   '.-..',
-      'm':     '--',
-      'n':     '-.',
-      'o':    '---',
-      'p':   '.--.',
-      'q':   '--.-',
-      'r':    '.-.',
-      's':    '...',
-      't':      '-',
-      'u':    '..-',
-      'v':   '...-',
-      'w':    '.--',
-      'x':   '-..-',
-      'y':   '-.--',
-      'z':   '--..',
-      '1':  '.----',
-      '2':  '..---',
-      '3':  '...--',
-      '4':  '....-',
-      '5':  '.....',
-      '6':  '-....',
-      '7':  '--...',
-      '8':  '---..',
-      '9':  '----.',
-      '0':  '-----',
-      ' ':      '/',
-      '/': '..--..',
-      '!': '-.-.--',
-      '@': '.--.-.'
-
-
-    }
-  
-    var morseCode_split = morseCode.split('   ');
-    var morsecode_map  = morseCode_split.map(a => a.split(' ')
-          .map(
-            b => ref[b]
-          ).join('')
-      ).join(' ');
-    
-
-      return  decoded
-    }
-
-
-
-
-  function putcodehere(){
-    document.getElementById("chair").innerHTML= decoded;
-console.log(decoded)
-  var decoded = codeMorsecode(prompt("Put Morse code here"));
-
+<script>
+function foo(){
+const morseCode = {
+  "A": ".-",
+  "B": "-...",
+  "C": "-.-.",
+  "D": "-..",
+  "E": ".",
+  "F": "..-.",
+  "G": "--.",
+  "H": "....",
+  "I": "..",
+  "J": ".---",
+  "K": "-.-",
+  "L": ".-..",
+  "M": "--",
+  "N": "-.",
+  "O": "---",
+  "P": ".--.",
+  "Q": "--.-",
+  "R": ".-.",
+  "S": "...",
+  "T": "-",
+  "U": "..-",
+  "W": ".--",
+  "X": "-..-",
+  "Y": "-.--",
+  "Z": "--..",
+  " ": "/",
+  '?': '..--..',
+  '!': '-.-.--',
+  '@': '.--.-.',
 
 }
-  </script>
+var message = "HELLO"
+
+for (var i = 0; i <  messsage.length; i++){
+  //print each  character
+  console.log(message.charAt(i))
+  //replace each  character
+  message.replaceAt(i, "x")
+
+}
+console.log(messaage)
+const convertToMorse = (str) => {
+  return str.toUpperCase().split("").map(el => {
+     return morseCode[el] ? morseCode[el] : el;
+  }).join("");
+}
+
+}
+function putcodehere(){
+  var decoded = code(prompt("Put sentence here"));
+
+  document.getElementById("chair").innerHTML= code;
+}
+
+</script>
 
 </head>
 <body>
 
     <h1 id = "chair" style="background-color:blue">English</h1>
-    <p>  <a href="#" onclick="putcodehere();";> Click here for Morse Code</a> </p>
+    <p>  <a href="#" onclick="foo();"> Click here for Morse Code</a> </p>
 
 
 
 
 </body>
 </html>
+
